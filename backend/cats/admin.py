@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from .models import Cat, Achievement, AchievementCat
-
+from .models import Achievement, AchievementCat, Cat
 
 admin.site.register(Achievement)
 admin.site.register(AchievementCat)
