@@ -57,13 +57,6 @@ WSGI_APPLICATION = 'kittygram_backend.wsgi.application'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
         # Меняем настройку Django: теперь для работы будет использоваться
@@ -112,9 +105,6 @@ STATIC_ROOT = BASE_DIR / 'collected_static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/media/'
-# MEDIA_ROOT = '/var/www/kittygram/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_ROOT = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
