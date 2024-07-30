@@ -11,23 +11,28 @@ services:
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
+    restart: unless-stopped
   backend:
-    image: qqyall/kittygram_backend
+    image: qqyall/kittygram_backend:latest
     env_file: .env
     volumes:
       - static:/backend_static
       - media:/media
+    depends_on:
+      - kittygram_db
   frontend:
     env_file: .env
-    image: qqyall/kittygram_frontend
+    image: qqyall/kittygram_frontend:latest
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
   gateway:
-    image: qqyall/kittygram_gateway
+    image: qqyall/kittygram_gateway:latest
     env_file: .env
     volumes:
       - static:/staticfiles
       - media:/media
+    depends_on:
+      - kittygram_db
     ports:
       - 9000:80
